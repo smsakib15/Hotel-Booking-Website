@@ -31,7 +31,7 @@
 
     <div style="width:200px; font-size:18px; color:#09F; float:left">
 
-      <table cellpadding="0" cellspacing="0" width="1000px">
+      <table cellpadding="0" cellspacing="0" width="1000px"> 
         <tr>
           <td style="font-family:Cinzel Decorative; font-size:30px; padding-left:14px; padding-top:20px; color:#4e4039"><b>Category</b>
             <hr style="width: 150px; height: 2px;">
