@@ -1,0 +1,172 @@
+<?php 
+session_start();
+if(!isset($_SESSION['access_admin_psati_token'])){
+unset($_POST);
+unset($_GET);
+header("location:../logout.php");
+exit('');
+die('');
+}else{
+include '../db.php';
+$inbox = 'active';
+$u = $_SESSION['username'];
+
+
+if (isset($_GET['markasread']) && $_GET['markasread'] != null) {
+$markasread = $_GET['markasread'];
+$stmt_upord = mysqli_query($con, "SELECT * FROM inbox WHERE id = '$markasread'");
+if (mysqli_num_rows($stmt_upord) == null) {
+header("location:index.php");
+exit('');
+}else{
+
+mysqli_query($con, "UPDATE inbox set status = '2' WHERE id ='$markasread'");
+header("location:index.php");
+
+}
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inbox</title>
+<link href="../../images/logo.png" rel="icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../css/adminlte.min.css">
+  <style type="text/css">
+.btnn{
+      border: none;
+      padding: 7px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      outline: none;
+      margin-left:5px;
+      text-decoration:none;
+      text-align:center;
+      font-size:small;
+      letter-spacing:1px;
+  }
+.danger{ background: #02b9ad;color:#fffdfd ;}
+.warnint{background: #d6a206;color: #404040;}
+.success{background: red;color: #fffdfd;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type=number] {
+-moz-appearance:textfield;
+}
+</style>
+</head>
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center"> 
+    <img class="animation__wobble" src="../../images/logo.png" width="100px">
+  </div>
+ <!-- Navbar -->
+<?php include '../header.php'; ?>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  <!-- Content Wrapper. Contains page content -->
+<!------------------------Start Home ------------------------------------->
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Inbox</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="route.php?destination=home">Home</a></li>
+              <li class="breadcrumb-item active" style="margin-right:10px;">Inbox</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <div class="card-body">
+
+<div style="height: 380px; width: 100%; overflow: scroll;">
+<table id="example2" class="table table-bordered table-hover">
+<thead style="position: sticky; top: 0; background: #454d55;">
+<tr>
+<th>ID</th>
+<th>User</th>
+<th>Message</th>
+<th>Action</th>
+ </tr>
+</thead>
+<?php
+$result = mysqli_query($con, "SELECT * FROM inbox ORDER BY id DESC ");
+while($row = mysqli_fetch_array($result)) { 
+?>
+<tbody>
+<tr>
+   <td><?php echo $row['id']; ?></td>
+   <td><?php echo $row['name'].'<br>'.$row['mobile'].'<br>'.$row['email']; ?></td>
+   <td><?php echo $row['msg']; ?></td>
+ <td>
+  <?php if ($row['status'] == 1) { ?>
+ <a href="index.php?markasread=<?php echo $row['id']; ?>"> <span class="badge badge-warning">Mark as Read</span></a>
+<?php } else{ ?>
+  <span class="badge badge-success">Read</span>
+<?php } ?>
+ </td>
+
+</tr>
+<?php } ?>
+</tbody>
+</table></div>
+
+
+</div>
+  <aside class="control-sidebar control-sidebar-dark"></aside>
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020-2025 .</strong>
+    All rights reserved.
+  </footer>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/adminlte.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+  $(document).ready(function(){
+    function check_login(){
+      $.ajax({
+        url:'../index.php',
+        method:'post',
+        data:{action:'check_login'},
+        success:function(data)
+        {
+          if(data.trim() == 'blocked')
+          {
+            window.location='../logout.php';
+          }
+        }
+      });
+    }
+    setInterval(function(){
+      check_login();
+    }, 1000);
+  });
+</script>
+<?php } ?>

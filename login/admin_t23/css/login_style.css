@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    background: #77d7e870;
+    background: -webkit-linear-gradient(to top, #77d7e870, #77d7e810);
+    background: -moz-linear-gradient(to top, #77d7e870, #77d7e810);
+    background: -o-linear-gradient(to top, #77d7e870, #77d7e810);
+    background: linear-gradient(to top, #77d7e870, #77d7e810);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+html, body, .wrapper{ height: 100%}
+
+.bn-font{ font-family: solaimanlipi !important; font-size: 14px}
+.text-left{ text-align: left; display: inherit}
+.font-10{ font-size: 10px !important}
+.font-12{ font-size: 12px !important}
+.font-14{ font-size: 14px !important}
+.font-16{ font-size: 16px !important}
+.font-18{ font-size: 18px !important}
+.font-20{ font-size: 20px !important}
+
+.colorlib-bubbles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1}
+
+.colorlib-bubbles li { position: absolute; list-style: none; display: block; width: 40px; height: 40px; _background-color: rgba(255, 255, 255, 0.15); background-color: rgba(255, 255, 255, 0.5); bottom: -160px; -webkit-animation: square 20s infinite; -moz-animation: square 250s infinite; -o-animation: square 20s infinite; -ms-animation: square 20s infinite; animation: square 20s infinite; -webkit-transition-timing-function: linear; -moz-transition-timing-function: linear; -o-transition-timing-function: linear; -ms-transition-timing-function: linear; transition-timing-function: linear; -webkit-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%}
+
+.colorlib-bubbles li:nth-child(1) { left: 10%}
+
+.colorlib-bubbles li:nth-child(2) { left: 20%; width: 80px; height: 80px; -webkit-animation-delay: 2s; -moz-animation-delay: 2s; -o-animation-delay: 2s; -ms-animation-delay: 2s; animation-delay: 2s; -webkit-animation-duration: 17s; -moz-animation-duration: 17s; -o-animation-duration: 17s; animation-duration: 17s}
+
+.colorlib-bubbles li:nth-child(3) { left: 25%; -webkit-animation-delay: 4s; -moz-animation-delay: 4s; -o-animation-delay: 4s; -ms-animation-delay: 4s; animation-delay: 4s}
+
+.colorlib-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; -webkit-animation-duration: 22s; -moz-animation-duration: 22s; -o-animation-duration: 22s; -ms-animation-duration: 22s; animation-duration: 22s; background-color: rgba(255, 255, 255, 0.25)}
+
+.colorlib-bubbles li:nth-child(5) { left: 70%}
+
+.colorlib-bubbles li:nth-child(6) { left: 80%; width: 120px; height: 120px; -webkit-animation-delay: 3s; -moz-animation-delay: 3s; -o-animation-delay: 3s; -ms-animation-delay: 3s; animation-delay: 3s; background-color: rgba(255, 255, 255, 0.2)}
+
+.colorlib-bubbles li:nth-child(7) { left: 32%; width: 160px; height: 160px; -webkit-animation-delay: 7s; -moz-animation-delay: 7s; -o-animation-delay: 7s; -ms-animation-delay: 7s; animation-delay: 7s}
+
+.colorlib-bubbles li:nth-child(8) { left: 55%; width: 20px; height: 20px; -webkit-animation-delay: 15s; -moz-animation-delay: 15s; animation-delay: 15s; -webkit-animation-duration: 40s; -moz-animation-duration: 40s; animation-duration: 40s}
+
+.colorlib-bubbles li:nth-child(9) { left: 25%; width: 10px; height: 10px; -webkit-animation-delay: 2s; animation-delay: 2s; -webkit-animation-duration: 40s; animation-duration: 40s; background-color: rgba(255, 255, 255, 0.3)}
+
+.colorlib-bubbles li:nth-child(10) { left: 90%; width: 160px; height: 160px; -webkit-animation-delay: 11s; animation-delay: 11s}
+
+.colorlib-bubbles li:nth-child(1){ background: #ffffff30}
+.colorlib-bubbles li:nth-child(2){ background: #4cc9f030}
+.colorlib-bubbles li:nth-child(3){ background: #bfd20030}
+.colorlib-bubbles li:nth-child(4){ background: #7209b730}
+.colorlib-bubbles li:nth-child(5){ background: #77493630}
+.colorlib-bubbles li:nth-child(6){ background: #0081a730}
+.colorlib-bubbles li:nth-child(7){ background: #06d6a030}
+.colorlib-bubbles li:nth-child(8){ background: #e9c46a30}
+.colorlib-bubbles li:nth-child(9){ background: #e6394630}
+.colorlib-bubbles li:nth-child(10){ background: #26465330}
+
+@-webkit-keyframes square {
+    0% { -webkit-transform: translateY(0); -moz-transform: translateY(0); -o-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0);
+    }
+
+    100% { -webkit-transform: translateY(-700px) rotate(600deg); -moz-transform: translateY(-700px) rotate(600deg); -o-transform: translateY(-700px) rotate(600deg); -ms-transform: translateY(-700px) rotate(600deg); transform: translateY(-700px) rotate(600deg);
+    }
+}
+
+@keyframes square {
+    0% { -webkit-transform: translateY(0); -moz-transform: translateY(0); -o-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0);
+    }
+
+    100% { -webkit-transform: translateY(-700px) rotate(600deg); -moz-transform: translateY(-700px) rotate(600deg); -o-transform: translateY(-700px) rotate(600deg); -ms-transform: translateY(-700px) rotate(600deg); transform: translateY(-700px) rotate(600deg);
+    }
+}
+
+.login-page {
+    max-width: 420px;
+    padding: 3% 0 0;
+    margin: auto;
+    position: fixed;
+    left: 5px;
+    right: 5px;
+}
+
+.sso-logo{ text-align: center; padding: 0px 5px 15px 5px}
+.sso-logo .logo{ max-height: 45px}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 420px;
+    margin: 0 auto 25px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 1px solid #cecece;
+    margin: 0 0 15px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #51a6ee;
+    width: 100%;
+    border: 1px solid #00000010;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: #FFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0px 1px 5px #333;
+}
+.form button:hover,.form button:active,.form button:focus {
+    background: #368bd2;
+}
+.form .error-message {
+    padding: 10px 0px;
+    color: #cd0000;
+    font-size: 13px;
+    text-align: left;
+}
+
+.form .ipAddress {
+    margin: 20px 0 0;
+    color: #959595;
+    font-size: 12px;
+    text-align: left;
+}
+
+.request{ text-align: center; margin-top: 20px}
+.request .request-title{ color: #959595; font-size: 12px; padding: 10px 0px; float: left}
+.request .request-logo{ max-width: 100px; max-height: 30px; float: right}
+.request .request-by{ display: none; color: #fff; font-size: 12px; font-weight: bold; text-align: center}
+
+.forget-password{ font-size: 14px; margin: 20px 0 0; text-align: left}
+.forget-password a{ font-size: 18px; text-decoration: none; color: #000;}
+
+.registration{ float:right; color: #0140be !important;}
+
+
+.text-red{ color: #cd0000 !important;}
+.relative{ position: relative;}
+.show-password{ position: absolute; top: 12px; right: 15px; cursor:pointer;}
+
+@media (max-width: 468px){
+    .credit-info{ right: 0px; text-align:center;}
+}
